@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdventureController;
+use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InstructorsController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,26 +19,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [AboutController::class, 'index']);
 
-Route::get('/adventure', function () {
-    return view('adventure');
-});
+Route::get('/adventure', [AdventureController::class, 'index']);
 
-Route::get('/feature', function () {
-    return view('feature');
-});
+Route::get('/adventure/{slug}', [AdventureController::class, 'show']);
 
-Route::get('/testimonial', function () {
-    return view('testimonial');
-});
+Route::get('/feature', [FeatureController::class, 'index']);
 
-Route::get('/instructors', function () {
-    return view('instructors');
-});
+Route::get('/testimonial', [TestimonialController::class, 'index']);
+
+Route::get('/instructors', [InstructorsController::class, 'index']);

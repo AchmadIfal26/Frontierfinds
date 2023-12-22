@@ -9,10 +9,10 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mx-auto py-0">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="/adventure" class="nav-item nav-link">Courses</a>
-                    <a href="/instructors" class="nav-item nav-link">Instructors</a>
-                    <a href="/testimonial" class="nav-item nav-link">Testimonial</a>
+                    <a href="/" class="nav-item nav-link {{ ($title === "Home") ? 'active' : '' }}">Home</a>
+                    <a href="/adventure" class="nav-item nav-link {{ ($title === "Adventure") ? 'active' : '' }}">Adventure</a>
+                    <a href="/instructors" class="nav-item nav-link {{ ($title === "Instructors") ? 'active' : '' }}">Instructors</a>
+                    <a href="/testimonial" class="nav-item nav-link {{ ($title === "Testimonial") ? 'active' : '' }}">Testimonial</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More</a>
                         <div class="dropdown-menu m-0">
