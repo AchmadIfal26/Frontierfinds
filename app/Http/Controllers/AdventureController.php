@@ -41,12 +41,12 @@ class AdventureController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($slug)
+    public function show(Adventure $adventure)
     {
         return view('adventure', [
             "title" => "Single Adventure",
             "active" => "adventure",
-            "adventure" => Adventure::find($slug)
+            "adventure" => $adventure
         ]);
     }
 

@@ -24,7 +24,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/adventure', [AdventureController::class, 'index']);
-Route::get('/adventure/{slug}', [AdventureController::class, 'show']);
+Route::get('/adventure/{adventure:slug}', [AdventureController::class, 'show']);
 
 Route::get('/feature', [FeatureController::class, 'index']);
 

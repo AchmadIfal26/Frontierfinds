@@ -5,9 +5,9 @@
             <h2>
                 <a href="/adventure/{{ $adventure["slug"] }}">{{ $adventure["title"] }}</a>
             </h2>
-            <h5>Guide by : {{ $adventure["guide"] }}</h5>
-            <h6>Duration Adventure : {{ $adventure["duration"] }}</h6>
-            <p>{{ $adventure["description"] }}</p>
+            <h5>Guide by : {{ $adventure->guide }}</h5>
+            <h6>Duration Adventure : {{ $adventure->duration }}</h6>
+            <p>{{ $adventure->excerpt }}</p>
         </article>
     @endforeach
 {{--
