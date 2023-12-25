@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Http\Requests\StoreCategoryRequest;
-use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
@@ -13,7 +13,13 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all(); // Ganti ini sesuai kebutuhan
+
+        return view('categories', [
+            'title' => 'categories',
+            'categories' => $categories,
+            'active' => 'categories',
+        ]);
     }
 
     /**
@@ -27,7 +33,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCategoryRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -37,13 +43,17 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('category', [
+            'title' => $category->name,
+            'adventures' => $category->adventures,
+            'category' => $category->name
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category)
+    public function edit(string $id)
     {
         //
     }
@@ -51,7 +61,7 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -59,7 +69,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy(string $id)
     {
         //
     }
