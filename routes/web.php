@@ -10,6 +10,7 @@ use App\Http\Controllers\AdventureController;
 use App\Http\Controllers\GuideController;
 use App\Http\Controllers\InstructorsController;
 use App\Http\Controllers\TestimonialController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,9 @@ Route::get('/instructors', [InstructorsController::class, 'index']);
 Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
 
-Route::get('/guide/{user}', [GuideController::class, 'show']);
+Route::get('/guides/{guide:username}', function(User $guide) {
+    return view('adventures', [
+        'title' => 'Guide Posts',
+        'adventures' => $guide->adventures,
+    ]);
+});

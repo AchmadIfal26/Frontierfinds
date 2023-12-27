@@ -30,34 +30,34 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'alfarazy@gmail.com',
         //     'password' => bcrypt('AlFarazy')
         // ]);
-        Adventure::factory(5)->create();
+        Adventure::factory(50)->create();
 
-        // User::factory(3)->create();
+        User::factory(3)->create();
 
-        // Category::create([
-        //     'name' => 'Hiking',
-        //     'slug' => 'hiking'
-        // ]);
+        Category::create([
+            'name' => 'Hiking',
+            'slug' => 'hiking'
+        ]);
 
-        // Category::create([
-        //     'name' => 'Snorkeling ',
-        //     'slug' => 'snorkeling '
-        // ]);
+        Category::create([
+            'name' => 'Snorkeling ',
+            'slug' => 'snorkeling '
+        ]);
 
-        // Category::create([
-        //     'name' => 'Mountain Biking',
-        //     'slug' => 'mountain-biking'
-        // ]);
+        Category::create([
+            'name' => 'Mountain Biking',
+            'slug' => 'mountain-biking'
+        ]);
 
-        // Category::create([
-        //     'name' => 'Camping',
-        //     'slug' => 'camping'
-        // ]);
+        Category::create([
+            'name' => 'Camping',
+            'slug' => 'camping'
+        ]);
 
-        // Category::create([
-        //     'name' => 'Rafting',
-        //     'slug' => 'rafting'
-        // ]);
+        Category::create([
+            'name' => 'Rafting',
+            'slug' => 'rafting'
+        ]);
 
 
     }

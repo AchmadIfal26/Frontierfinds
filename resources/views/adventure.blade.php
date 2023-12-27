@@ -3,7 +3,7 @@
 @section('container')
     <article>
         <h2>{{ $adventure->title }}</h2>
-        <h5>Guide by : <a href="#">{{ $adventure->user->name }}</a> in
+        <h5>Guide by : <a href="/guides/{{ $adventure->guide->username }}">{{ $adventure->guide->name }}</a> in
             <a href="/categories/{{ $adventure->category->slug }}">{{ $adventure->category->name }}</a>
         </h5>
         <h6>Difficulty Level : {{ $adventure->skill }}</h6>

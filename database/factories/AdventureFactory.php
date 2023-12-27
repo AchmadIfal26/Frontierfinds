@@ -32,7 +32,7 @@ class AdventureFactory extends Factory
             'price' => $faker->randomFloat(2, 10, 1000),
             'description' => $faker->paragraph(mt_rand(5, 10)),
             'category_id' => mt_rand(1,5),
-            'user_id' => \App\Models\User::factory(),
+            'user_id' => mt_rand(1,3),
         ];
     }
 }
