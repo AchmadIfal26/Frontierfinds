@@ -17,7 +17,8 @@ class AdventureController extends Controller
         return view('adventures', [
             "active" => "adventure",
             "title" => "Adventure",
-            "adventures" => Adventure::all()
+            // "adventures" => Adventure::all(),
+            "adventures" => Adventure::latest()->get()
         ]);
     }
 

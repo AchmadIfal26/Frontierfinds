@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AdventureController;
+use App\Http\Controllers\GuideController;
 use App\Http\Controllers\InstructorsController;
 use App\Http\Controllers\TestimonialController;
 
@@ -36,3 +37,5 @@ Route::get('/instructors', [InstructorsController::class, 'index']);
 
 Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
+
+Route::get('/guide/{user}', [GuideController::class, 'show']);

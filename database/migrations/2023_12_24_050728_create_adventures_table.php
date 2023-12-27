@@ -17,11 +17,10 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('guide');
             $table->text('excerpt');
-            $table->string('duration');
+            $table->time('duration');
             $table->string('skill');
-            $table->string('price');
+            $table->decimal('price', 10, 2);
             $table->text('description');
             $table->timestamps();
         });

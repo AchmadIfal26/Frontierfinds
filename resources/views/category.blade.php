@@ -1,17 +1,20 @@
 @extends('layouts.main')
 @section('container')
-    <h1 class="">Adventures Categories : {{ $category }}</h1>
+    <h1 class="">Adventures Categories: {{ $category }}</h1>
     @foreach ($adventures as $adventure)
         <article class="mb-5">
             <h2>
                 <a href="/adventure/{{ $adventure["slug"] }}">{{ $adventure["title"] }}</a>
             </h2>
-            <h5>Guide by : {{ $adventure->guide }}</h5>
+            <h5>Guide by : <a href="#">{{ $adventure->user->name }}</h5>
             <h6>Duration Adventure : {{ $adventure->duration }} Hrs</h6>
-            <p>{{ $adventure->excerpt }}</p>
-            {{-- <p>{{ Illuminate\Support\Str::limit(strip_tags($adventure->excerpt), 50) }}</p> --}}
+            <p style="color: black">{{ $adventure->excerpt }}</p>
+            <a href="/adventure/{{ $adventure->slug }}">Read More...</a>
         </article>
     @endforeach
+
+
+
 {{--
        <!-- Courses Start -->
        <div class="container-fluid py-5">

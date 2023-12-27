@@ -21,4 +21,5 @@ class Adventure extends Model
         return $this->belongsTo(User::class);
     }
 
+
 }
