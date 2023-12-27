@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('container')
+
     @foreach ($adventures as $adventure)
         <article class="mb-5 border-bottom pb-4">
             <h2>
@@ -8,7 +9,8 @@
             <h5>Guide by : <a href="/guides/{{ $adventure->guide->username }}">{{ $adventure->guide->name }}</a> in
                 <a href="/categories/{{ $adventure->category->slug }}">{{ $adventure->category->name }}</a>
             </h5>
-            <h6>Duration Adventure : {{ $adventure->duration }} Hrs</h6>
+            <h6>Travel Estimates : {{ $adventure->duration }} Hrs</h6>
+            <h6>Difficulty : {{ $adventure->difficulty->name }}</h6>
             <p>{{ $adventure->excerpt }}</p>
             <a href="/adventure/{{ $adventure->slug }}">Read More...</a>
         </article>

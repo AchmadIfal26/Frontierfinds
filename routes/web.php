@@ -39,9 +39,4 @@ Route::get('/instructors', [InstructorsController::class, 'index']);
 Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
 
-Route::get('/guides/{guide:username}', function(User $guide) {
-    return view('adventures', [
-        'title' => 'Guide Posts',
-        'adventures' => $guide->adventures,
-    ]);
-});
+Route::get('/guides/{guide:username}', [GuideController::class, 'show']);

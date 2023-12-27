@@ -59,6 +59,21 @@ class DatabaseSeeder extends Seeder
             'slug' => 'rafting'
         ]);
 
+        Difficulty::create([
+            'name' => 'Beginner',
+            'slug' => 'beginner'
+        ]);
+
+        Difficulty::create([
+            'name' => 'Amateur',
+            'slug' => 'amateur'
+        ]);
+
+        Difficulty::create([
+            'name' => 'Professional',
+            'slug' => 'professional'
+        ]);
+
 
     }
 }

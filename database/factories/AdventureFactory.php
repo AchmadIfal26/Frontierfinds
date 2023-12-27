@@ -28,11 +28,11 @@ class AdventureFactory extends Factory
             'slug' => $faker->unique()->slug(),
             'excerpt' => $faker->sentence(mt_rand(10, 25)),
             'duration' => gmdate("H:i:s", $faker->numberBetween(1, 86400)),
-            'skill' => $faker->word,
             'price' => $faker->randomFloat(2, 10, 1000),
-            'description' => $faker->paragraph(mt_rand(5, 10)),
-            'category_id' => mt_rand(1,5),
-            'user_id' => mt_rand(1,3),
+            'description' => implode("\n\n", $faker->paragraphs(mt_rand(10, 50))),
+            'category_id' => mt_rand(1, 5),
+            'user_id' => mt_rand(1, 3),
+            'difficulty_id' => mt_rand(1, 3),
         ];
     }
 }
