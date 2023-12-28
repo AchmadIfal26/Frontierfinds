@@ -37,7 +37,10 @@ class DifficultyController extends Controller
      */
     public function show(Difficulty $difficulty)
     {
-        //
+        return view('adventures', [
+            'title' => "Adventures by Category : $difficulty->name",
+            'adventures' => $difficulty->adventures,
+        ]);
     }
 
     /**

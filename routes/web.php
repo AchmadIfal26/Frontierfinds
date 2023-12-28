@@ -40,3 +40,5 @@ Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::get('/guides/{guide:username}', [GuideController::class, 'show']);
+
+

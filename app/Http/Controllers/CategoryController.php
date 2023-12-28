@@ -43,10 +43,9 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('category', [
-            'title' => $category->name,
-            'adventures' => $category->adventures,
-            'category' => $category->name
+        return view('adventures', [
+            'title' => "Adventures by Category : $category->name",
+            'adventures' => $category->adventures->load('category', 'guide'),
         ]);
     }
 

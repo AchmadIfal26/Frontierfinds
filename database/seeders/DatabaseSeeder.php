@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'alfarazy@gmail.com',
         //     'password' => bcrypt('AlFarazy')
         // ]);
-        Adventure::factory(50)->create();
+        Adventure::factory(20)->create();
 
         User::factory(3)->create();
 

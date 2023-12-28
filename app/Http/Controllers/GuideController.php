@@ -38,8 +38,8 @@ class GuideController extends Controller
     public function show(User $guide)
     {
         return view('adventures', [
-            'title' => 'Guide Posts',
-            'adventures' => $guide->adventures,
+            'title' => "Posts by Guide : $guide->name",
+            'adventures' => $guide->adventures->load('category', 'guide'),
         ]);
     }
 
