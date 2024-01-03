@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('excerpt');
             $table->time('duration');
-            $table->double('price', 10, 2);
+            $table->double('price', 100, 3);
             $table->text('description');
             $table->timestamps();
         });

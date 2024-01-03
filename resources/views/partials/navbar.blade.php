@@ -9,16 +9,17 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mx-auto py-0">
-                    <a href="/" class="nav-item nav-link {{ ($title === "Home") ? 'active' : '' }}">Home</a>
-                    <a href="/adventure" class="nav-item nav-link {{ ($title === "Adventure") ? 'active' : '' }}">Adventure</a>
-                    <a href="/instructors" class="nav-item nav-link {{ ($title === "Instructors") ? 'active' : '' }}">Instructors</a>
-                    <a href="/testimonial" class="nav-item nav-link {{ ($title === "Testimonial") ? 'active' : '' }}">Testimonial</a>
+                    <a href="/" class="nav-item nav-link {{ ($active === "home") ? 'active' : '' }}">Home</a>
+                    <a href="/adventure" class="nav-item nav-link {{ ($active === "adventure") ? 'active' : '' }}">Adventure</a>
+                    <a href="/instructors" class="nav-item nav-link {{ ($active === "instructors") ? 'active' : '' }}">Instructors</a>
+                    <a href="/categories" class="nav-item nav-link {{ ($active === "categories") ? 'active' : '' }}">Categories</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More</a>
                         <div class="dropdown-menu m-0">
                             <a href="/feature" class="dropdown-item">Feature</a>
                             <a href="/about" class="dropdown-item">About</a>
                             <a href="/about" class="dropdown-item">Contact</a>
+                            <a href="/testimonial" class="dropdown-item">Testimonial</a>
                         </div>
                     </div>
                 </div>

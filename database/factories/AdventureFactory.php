@@ -27,12 +27,12 @@ class AdventureFactory extends Factory
             'title' => $faker->sentence(mt_rand(2, 8)),
             'slug' => $faker->unique()->slug(),
             'excerpt' => $faker->sentence(mt_rand(10, 25)),
-            'duration' => gmdate("H:i:s", $faker->numberBetween(1, 86400)),
-            'price' => $faker->randomFloat(2, 10, 1000),
-            'description' => implode("\n\n", $faker->paragraphs(mt_rand(10, 50))),
-            'category_id' => mt_rand(1, 5),
+            'duration' => gmdate("H:i:s", $faker->numberBetween(3600, 6 * 3600)),
+            'price' => $faker->randomFloat(3, 10, 1000),
+            'description' => '<p>' . implode('</p><p>', $faker->paragraphs(mt_rand(5, 10))) . '</p>',
+            'category_id' => mt_rand(1, 6),
             'user_id' => mt_rand(1, 3),
-            'difficulty_id' => mt_rand(1, 3),
+            'difficulty_id' => mt_rand(1, 3)
         ];
     }
 }

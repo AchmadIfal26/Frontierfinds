@@ -23,6 +23,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
@@ -99,7 +100,7 @@
                     <div class="d-flex justify-content-start mt-4">
                         <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-twitter"></i></a>
                         <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-facebook-f"></i></a>
-                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-linkedin-in"></i></a>
+                        <a class="text-white mr-4" href="https://www.linkedin.com/in/achmadifal/"><i class="fab fa-2x fa-linkedin-in"></i></a>
                         <a class="text-white" href="#"><i class="fab fa-2x fa-instagram"></i></a>
                     </div>
                 </div>
@@ -147,13 +148,52 @@
     <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="{{ asset('lib/owlcarousel/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('lib/owlcarousel/owl.theme.default.min.css') }}">
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('lib/easing/easing.min.js') }}"></script>
+<script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
+<script src="{{ asset('lib/counterup/counterup.min.js') }}"></script>
+<script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+<!-- Your custom script to initialize Owl Carousel -->
+<!-- Your custom script to initialize Owl Carousel -->
+<script>
+    $(document).ready(function(){
+        $('.related-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 4,
+                    nav: true,
+                    loop: false,
+                    margin: 20
+                }
+            }
+        });
+    });
+</script>
+
+
+
+    <script>
+        feather.replace();
+      </script>
+      <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

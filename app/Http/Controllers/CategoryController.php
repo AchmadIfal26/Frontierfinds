@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Adventure;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,10 +14,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all(); // Ganti ini sesuai kebutuhan
+        $categories = Category::all();
 
         return view('categories', [
-            'title' => 'categories',
+            'title' => 'Categories',
             'categories' => $categories,
             'active' => 'categories',
         ]);
@@ -43,11 +44,21 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+        // Retrieve adventures related to the category
+        $adventures = $category->adventures->load('category', 'guide');
+
+        // Retrieve other adventures, e.g., recent adventures
+        $otherAdventures = Adventure::where('category_id', '!=', $category->id)->limit(5)->get();
+
         return view('adventures', [
-            'title' => "Adventures by Category : $category->name",
-            'adventures' => $category->adventures->load('category', 'guide'),
+            'title' => "Adventures by Category: $category->name",
+            'adventures' => $adventures,
+            'otherAdventures' => $otherAdventures,
+            'active' => 'categories',
         ]);
     }
+
+
 
     /**
      * Show the form for editing the specified resource.

@@ -59,6 +59,11 @@ class DatabaseSeeder extends Seeder
             'slug' => 'rafting'
         ]);
 
+        Category::create([
+            'name' => 'Nature Conservation',
+            'slug' => 'nature-conservation'
+        ]);
+
         Difficulty::create([
             'name' => 'Beginner',
             'slug' => 'beginner'
@@ -73,7 +78,5 @@ class DatabaseSeeder extends Seeder
             'name' => 'Professional',
             'slug' => 'professional'
         ]);
-
-
     }
 }

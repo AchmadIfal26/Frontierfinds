@@ -1,153 +1,34 @@
 @extends('layouts.main')
 @section('container')
-    <h1 class="mb-5">{{ $title }} </h1>
-    @foreach ($adventures as $adventure)
-        <article class="mb-5 border-bottom pb-4">
-            <h2>
-                <a href="/adventure/{{ $adventure->slug }}">{{ $adventure->title }}</a>
-            </h2>
-            <h5>Guide by : <a href="/guides/{{ $adventure->guide->username }}">{{ $adventure->guide->name }}</a> in
-                <a href="/categories/{{ $adventure->category->slug }}">{{ $adventure->category->name }}</a>
-            </h5>
-            <h6>Travel Estimates : {{ $adventure->duration }} Hrs</h6>
-            <h6>Difficulty : {{ $adventure->difficulty->name }}</h6>
-            <p>{{ $adventure->excerpt }}</p>
-            <a href="/adventure/{{ $adventure->slug }}">Read More...</a>
-        </article>
-    @endforeach
-{{--
-       <!-- Courses Start -->
-       <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row mx-0 justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center position-relative mb-5">
-                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Our Courses</h6>
-                        <h1 class="display-4">Checkout New Releases Of Our Courses</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
-                        <img class="img-fluid" src="img/courses-1.jpg" alt="">
-                        <div class="courses-text">
-                            <h4 class="text-center text-white px-3">Web design & development courses for
-                                beginners</h4>
-                            <div class="border-top w-100 mt-3">
-                                <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
-                        <img class="img-fluid" src="img/courses-2.jpg" alt="">
-                        <div class="courses-text">
-                            <h4 class="text-center text-white px-3">Web design & development courses for
-                                beginners</h4>
-                            <div class="border-top w-100 mt-3">
-                                <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
-                        <img class="img-fluid" src="img/courses-3.jpg" alt="">
-                        <div class="courses-text">
-                            <h4 class="text-center text-white px-3">Web design & development courses for
-                                beginners</h4>
-                            <div class="border-top w-100 mt-3">
-                                <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
-                        <img class="img-fluid" src="img/courses-4.jpg" alt="">
-                        <div class="courses-text">
-                            <h4 class="text-center text-white px-3">Web design & development courses for
-                                beginners</h4>
-                            <div class="border-top w-100 mt-3">
-                                <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
-                        <img class="img-fluid" src="img/courses-5.jpg" alt="">
-                        <div class="courses-text">
-                            <h4 class="text-center text-white px-3">Web design & development courses for
-                                beginners</h4>
-                            <div class="border-top w-100 mt-3">
-                                <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
-                        <img class="img-fluid" src="img/courses-6.jpg" alt="">
-                        <div class="courses-text">
-                            <h4 class="text-center text-white px-3">Web design & development courses for
-                                beginners</h4>
-                            <div class="border-top w-100 mt-3">
-                                <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination pagination-lg justify-content-center mb-0">
-                          <li class="page-item disabled">
-                            <a class="page-link rounded-0" href="#" aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
-                              <span class="sr-only">Previous</span>
-                            </a>
-                          </li>
-                          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item">
-                            <a class="page-link rounded-0" href="#" aria-label="Next">
-                              <span aria-hidden="true">&raquo;</span>
-                              <span class="sr-only">Next</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-                </div>
+    <div class="row mx-0 justify-content-center">
+        <div class="col-lg-8">
+            <div class="section-title text-center position-relative mb-5">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Our Adventures</h6>
+                <h3 class="position-relative pb-2">{{ $title }} </h3>
             </div>
         </div>
     </div>
-    <!-- Courses End --> --}}
 
+    {{-- Pengulangan Kolom --}}
+    <div class="row">
+        @foreach ($adventures as $adventure)
+            <div class="col-lg-4 col-md-6 pb-4">
+                <div class="card" style="position: relative;">
+                    <a href="/categories/{{ $adventure->category->slug }}" class="text-white text-decoration-none position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.7); z-index: 1;">{{ $adventure->category->name }}</a>
+                    <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="/adventure/{{ $adventure->slug }}">
+                        <img class="img-fluid" src="https://source.unsplash.com/500x600?{{ $adventure->category->name }}" alt="{{ $adventure->category->name }}"/>
+                        <div class="courses-text">
+                            <h4 class="text-center text-white px-3">{{ $adventure->title }}</h4>
+                            <div class="border-top w-100 mt-3">
+                                <div class="d-flex justify-content-between p-4">
+                                    <span class="text-white"><i class="fa fa-user mr-2"></i> {{ $adventure->guide->username }}</span>
+                                    <span class="text-white"><i data-feather="compass"></i> {{ $adventure->difficulty->name }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        @endforeach
+    </div>
 @endsection

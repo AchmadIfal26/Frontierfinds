@@ -12,6 +12,8 @@ class Adventure extends Model
 
     protected $guarded = ['id'];
 
+    protected $with = ['guide', 'category'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

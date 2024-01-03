@@ -17,7 +17,7 @@ class AdventureController extends Controller
         return view('adventures', [
             "active" => "adventure",
             "title" => "All Adventure",
-            "adventures" => Adventure::with(['guide', 'category'])->latest()->get()
+            "adventures" => Adventure::latest()->get()
 
         ]);
     }
@@ -44,10 +44,16 @@ class AdventureController extends Controller
      */
     public function show(Adventure $adventure)
     {
+        $otherAdventures = Adventure::whereNotIn('id', [$adventure->id])
+        ->inRandomOrder()
+        ->limit(5)
+        ->get();
+
         return view('adventure', [
             "title" => "Single Adventure",
             "active" => "adventure",
-            "adventure" => $adventure
+            "adventure" => $adventure,
+            "otherAdventures" => $otherAdventures,
         ]);
     }
 
