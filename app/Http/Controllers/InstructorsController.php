@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Instructors;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreInstructorsRequest;
 use App\Http\Requests\UpdateInstructorsRequest;
 
@@ -13,9 +15,13 @@ class InstructorsController extends Controller
      */
     public function index()
     {
+        $categoryList = Category::all();
+
         return view('instructors', [
             "active" => "instructors",
-            "title" => "Instructors"
+            "title" => "Instructors",
+            "category" => $categoryList
+
         ]);
     }
 

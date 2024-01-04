@@ -15,11 +15,13 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
+        $categoryList = Category::all();
 
         return view('categories', [
             'title' => 'Categories',
             'categories' => $categories,
             'active' => 'categories',
+            "category" => $categoryList
         ]);
     }
 
@@ -44,6 +46,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+        $categories = Category::all();
+        $categoryList = Category::all();
         // Retrieve adventures related to the category
         $adventures = $category->adventures->load('category', 'guide');
 
@@ -55,6 +59,9 @@ class CategoryController extends Controller
             'adventures' => $adventures,
             'otherAdventures' => $otherAdventures,
             'active' => 'categories',
+            'categories' => $categories,
+            "category" => $categoryList
+
         ]);
     }
 

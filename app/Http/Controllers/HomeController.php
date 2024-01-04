@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Category;
+use App\Models\Adventure;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -12,9 +15,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $adventure = Adventure::all();
+        $categoryList = Category::all();
+
         return view('home', [
             "active" => "home",
-            "title" => "Home"
+            "title" => "Home",
+            "adventure" => $adventure,
+            "category" => $categoryList
+
         ]);
     }
 
@@ -33,6 +42,7 @@ class HomeController extends Controller
     {
         //
     }
+
 
     /**
      * Display the specified resource.

@@ -18,7 +18,7 @@
                         <div class="dropdown-menu m-0">
                             <a href="/feature" class="dropdown-item">Feature</a>
                             <a href="/about" class="dropdown-item">About</a>
-                            <a href="/about" class="dropdown-item">Contact</a>
+                            <a href="/contact" class="dropdown-item">Contact</a>
                             <a href="/testimonial" class="dropdown-item">Testimonial</a>
                         </div>
                     </div>

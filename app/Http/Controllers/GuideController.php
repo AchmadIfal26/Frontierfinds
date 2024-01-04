@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,7 +14,13 @@ class GuideController extends Controller
      */
     public function index()
     {
-        //
+        $categoryList = Category::all();
+
+        return view('guide', [
+            "active" => "guide",
+            "title" => "Guide",
+            "category" => $categoryList
+        ]);
     }
 
     /**
@@ -37,9 +44,13 @@ class GuideController extends Controller
      */
     public function show(User $guide)
     {
+        $categoryList = Category::all();
+
         return view('adventures', [
+            "active" => "guide",
             'title' => "Posts by Guide : $guide->name",
             'adventures' => $guide->adventures->load('category', 'guide'),
+            "category" => $categoryList
         ]);
     }
 

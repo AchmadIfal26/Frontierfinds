@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feature;
+use App\Models\Category;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFeatureRequest;
 use App\Http\Requests\UpdateFeatureRequest;
 
@@ -13,9 +15,12 @@ class FeatureController extends Controller
      */
     public function index()
     {
+        $categoryList = Category::all();
+
         return view('feature', [
             "active" => "feature",
-            "title" => "Feature"
+            "title" => "Feature",
+            "category" => $categoryList
         ]);
     }
 

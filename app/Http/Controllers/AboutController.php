@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AboutController extends Controller
 {
@@ -12,9 +14,12 @@ class AboutController extends Controller
      */
     public function index()
     {
+        $categoryList = Category::all();
+
         return view('about', [
             "active" => "about",
-            "title" => "About"
+            "title" => "About",
+            "category" => $categoryList
         ]);
     }
 

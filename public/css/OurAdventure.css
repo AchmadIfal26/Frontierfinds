@@ -1,0 +1,29 @@
+.d-flex.flex-column.justify-content-start {
+    /* Add your custom styles for this class here */
+}
+
+.d-flex.flex-column.justify-content-start li {
+    list-style-type: none; /* Remove default list item bullets */
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0
+    ); /* Set background color to transparent */
+    margin-bottom: 0.5rem; /* Add margin to the bottom of each list item */
+}
+
+.d-flex.flex-column.justify-content-start a {
+    color: white; /* Set text color to white */
+    text-decoration: none; /* Remove underline from links */
+    display: flex;
+    align-items: center;
+}
+
+.d-flex.flex-column.justify-content-start a i {
+    margin-right: 0.5rem; /* Add space to the right of the icon */
+}
+
+.text-white {
+    color: white; /* Set text color to white */
+}

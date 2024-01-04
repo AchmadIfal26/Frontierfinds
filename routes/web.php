@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AdventureController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GuideController;
 use App\Http\Controllers\InstructorsController;
 use App\Http\Controllers\TestimonialController;
@@ -25,6 +26,8 @@ use App\Models\User;
 
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/adventures/{adventure}', [AdventureController::class, 'show'])->name('adventure.show');
+
 Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/adventure', [AdventureController::class, 'index']);
@@ -38,6 +41,8 @@ Route::get('/instructors', [InstructorsController::class, 'index']);
 
 Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
+
+Route::get('/contact', [ContactController::class, 'index']);
 
 Route::get('/guides/{guide:username}', [GuideController::class, 'show']);
 

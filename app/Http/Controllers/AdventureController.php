@@ -6,6 +6,7 @@ use App\Models\Adventure;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAdventureRequest;
 use App\Http\Requests\UpdateAdventureRequest;
+use App\Models\Category;
 
 class AdventureController extends Controller
 {
@@ -14,10 +15,13 @@ class AdventureController extends Controller
      */
     public function index()
     {
+        $categoryList = Category::all();
+
         return view('adventures', [
             "active" => "adventure",
             "title" => "All Adventure",
-            "adventures" => Adventure::latest()->get()
+            "adventures" => Adventure::latest()->get(),
+            "category" => $categoryList
 
         ]);
     }
@@ -49,13 +53,30 @@ class AdventureController extends Controller
         ->limit(5)
         ->get();
 
+        $categoryList = Category::all();
+
         return view('adventure', [
             "title" => "Single Adventure",
             "active" => "adventure",
             "adventure" => $adventure,
             "otherAdventures" => $otherAdventures,
+            "category" => $categoryList
+
         ]);
     }
+
+    public function footer()
+    {
+        $categoryList = Category::all();
+
+        return view('footer', [
+            "title" => "Single Adventure",
+            "active" => "adventure",
+            "category" => $categoryList
+
+        ]);
+    }
+
 
     /**
      * Show the form for editing the specified resource.
